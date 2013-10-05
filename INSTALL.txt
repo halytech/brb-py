@@ -41,6 +41,10 @@ the USB device. So:
 THANKS
 ------
 
-This code is directly based on this perl module:
+This code is directly based on the comment found on this page:
+
+  - http://www.lunarlamp.co.uk/usb-panic-button-linux#comment-108
+
+It was also inspired by this perl module:
 
   - http://search.cpan.org/~bkendi/Device-USB-PanicButton-0.04/lib/Device/USB/PanicButton.pm
