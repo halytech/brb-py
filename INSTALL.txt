@@ -1,0 +1,46 @@
+BIG RED BUTTON - PYTHON DRIVER
+==============================
+
+
+SUPPORT
+-------
+
+This has only been developed & tested on an Ubuntu machine.
+
+
+REQUIREMENTS
+------------
+
+  - python 2.7.x
+  - python-usb
+  - lib-usb (I think)
+
+
+ADDITIONAL
+----------
+
+When the button is pressed the 'onButtonDown' function is called, at the moment
+(if your file system looks like mine!) this just executes the onbuttonpress.sh
+script. There is example code in there for doing various strange things, the
+best one is playing a random one of the sounds in the 'sounds' folder.
+
+Yeah I know the code is *not* nicely structured, ideally there would be a
+callback pattern or something used here. If you extend this code to make it
+better please let me know / issue a pull request or something. =)
+
+
+RUNNING
+-------
+
+You will need to run the script as a privileged user so it can communicate with
+the USB device. So:
+
+  sudo python redbutton.py
+
+
+THANKS
+------
+
+This code is directly based on this perl module:
+
+  - http://search.cpan.org/~bkendi/Device-USB-PanicButton-0.04/lib/Device/USB/PanicButton.pm

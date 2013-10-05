@@ -4,10 +4,11 @@ import time
 import usb
 import syslog
 import os
+import sys
 
 def onButtonDown():
   syslog.syslog('BIG RED BUTTON PRESSED!!')
-  os.system('sudo -u silver -n DISPLAY=:0.0 /home/silver/scripts/bigredbutton/onbuttonpress.sh')
+  os.system('sudo -u james -n DISPLAY=:0.0 /home/james/scripts/brb-py/onbuttonpress.sh')
   
 def onButtonUp():
   syslog.syslog('BIG RED BUTTON RELEASED!!')
@@ -19,6 +20,11 @@ def findButton():
         return dev
 
 dev = findButton()
+if dev is None:
+  syslog.syslog('redbutton.py executed but no Big Red Button could be found')
+  print '>>> The Big Red Button could not be found. Please plug it into a USB port.'
+  sys.exit()
+
 handle = dev.open()
 interface = dev.configurations[0].interfaces[0][0]
 endpoint = interface.endpoints[0]
